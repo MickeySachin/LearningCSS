@@ -1,0 +1,64 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #timer-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid black;
+            width: 10vw;
+            height: 4vh;
+        }
+        #timer{
+            text-align: center;
+            box-sizing: content-box;
+            /* padding: 5px; */
+            font-size: 20px;
+        }
+        
+        </style>
+
+        <script>
+            
+            // let now = Date().getTime();
+            var totalTime = 20;
+            var currTime = 0;
+            var timer = setInterval(func, 1000);
+
+            function func(){
+                
+                if (currTime <= totalTime){
+                    document.getElementById('timer').innerHTML = totalTime - currTime;
+                    currTime++;
+                }
+                else{
+
+                    alert('Time limit exceeded');
+                    clearInterval(timer);
+                }
+            }
+    
+    
+        </script>
+
+</head>
+<body>
+    
+    <div id="timer-container">
+
+        <p id="timer"></p>
+
+    </div>
+
+</body>
+</html>
